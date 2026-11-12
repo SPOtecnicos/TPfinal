@@ -13,6 +13,13 @@ h2 {
   color: #1f3a5f;
 }
 
+.contenido h2 {
+  border-bottom: 2px solid #d5dde8;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+/* ---------- barra superior ---------- */
 .barra {
   background-color: #1f3a5f;
   color: white;
@@ -22,11 +29,16 @@ h2 {
   padding: 10px 24px;
   flex-wrap: wrap;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .barra h2 {
   margin: 0;
   color: white;
+  border: none;
+  padding: 0;
 }
 
 .barra nav button {
@@ -62,6 +74,7 @@ h2 {
   margin: 0 auto;
 }
 
+/* ---------- botones ---------- */
 button {
   background-color: #2980b9;
   color: white;
@@ -70,6 +83,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   margin-right: 5px;
+  font-size: 14px;
   transition: background-color 0.2s;
 }
 
@@ -98,6 +112,7 @@ button.secundario:hover {
   background-color: #6a7778;
 }
 
+/* ---------- formularios ---------- */
 input,
 select {
   padding: 8px;
@@ -106,6 +121,7 @@ select {
   width: 100%;
   margin-bottom: 5px;
   font-size: 14px;
+  background-color: white;
 }
 
 input:focus,
@@ -125,8 +141,33 @@ label {
   margin-top: 8px;
   font-weight: bold;
   font-size: 14px;
+  color: #444;
 }
 
+.error-campo {
+  color: #c0392b;
+  font-size: 13px;
+}
+
+.mensaje {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.mensaje.ok {
+  background-color: #d4efdf;
+  color: #1e8449;
+  border-left-color: #1e8449;
+}
+
+.mensaje.error {
+  background-color: #f5b7b1;
+  color: #922b21;
+  border-left-color: #922b21;
+}
+
+/* ---------- tablas ---------- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -147,6 +188,9 @@ td {
 th {
   background-color: #dfe8f3;
   color: #1f3a5f;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 tbody tr:nth-child(even) {
@@ -157,6 +201,7 @@ tbody tr:hover {
   background-color: #e9f2fa;
 }
 
+/* ---------- tarjetas ---------- */
 .formulario,
 .tarjeta,
 .detalle,
@@ -172,26 +217,17 @@ tbody tr:hover {
   max-width: 450px;
 }
 
-.error-campo {
-  color: #c0392b;
-  font-size: 13px;
+.formulario h3,
+.carrito h3 {
+  margin-top: 0;
+  color: #1f3a5f;
 }
 
-.mensaje {
-  padding: 10px 14px;
-  border-radius: 6px;
+.botones {
+  margin-top: 12px;
 }
 
-.mensaje.ok {
-  background-color: #d4efdf;
-  color: #1e8449;
-}
-
-.mensaje.error {
-  background-color: #f5b7b1;
-  color: #922b21;
-}
-
+/* ---------- login ---------- */
 .login {
   display: flex;
   justify-content: center;
@@ -202,11 +238,26 @@ tbody tr:hover {
 
 .login .tarjeta {
   width: 340px;
+  padding: 25px;
+}
+
+.login .logo {
+  text-align: center;
+  color: #1f3a5f;
+  margin: 0 0 5px 0;
+  font-size: 26px;
+}
+
+.login h2 {
+  text-align: center;
+  font-size: 17px;
+  margin-top: 0;
 }
 
 .login button {
   margin-top: 15px;
   width: 100%;
+  padding: 10px;
 }
 
 .cambio {
@@ -214,10 +265,7 @@ tbody tr:hover {
   font-size: 14px;
 }
 
-.botones {
-  margin-top: 12px;
-}
-
+/* ---------- panel de inicio ---------- */
 .paneles {
   display: flex;
   gap: 15px;
@@ -247,6 +295,7 @@ tbody tr:hover {
   color: #1f3a5f;
 }
 
+/* ---------- tienda ---------- */
 .tienda {
   display: flex;
   gap: 20px;
@@ -259,4 +308,56 @@ tbody tr:hover {
 
 .carrito {
   flex: 1;
+  position: sticky;
+  top: 70px;
+}
+
+/* ---------- etiquetas de estado y stock ---------- */
+.estado {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.estado.pendiente {
+  background-color: #fdebd0;
+  color: #b9770e;
+}
+
+.estado.pagado {
+  background-color: #d6eaf8;
+  color: #1f618d;
+}
+
+.estado.enviado {
+  background-color: #e8daef;
+  color: #6c3483;
+}
+
+.estado.entregado {
+  background-color: #d4efdf;
+  color: #1e8449;
+}
+
+.stock-bajo {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* ---------- pantallas chicas ---------- */
+@media (max-width: 800px) {
+  .tienda {
+    flex-direction: column;
+  }
+
+  .carrito {
+    position: static;
+    width: 100%;
+  }
+
+  .contenido {
+    padding: 12px;
+  }
 }

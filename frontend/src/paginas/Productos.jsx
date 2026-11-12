@@ -161,7 +161,7 @@ function Productos({ usuario }) {
               <td>{p.nombre}</td>
               <td>{p.categoria}</td>
               <td>{formatoPesos(p.precio)}</td>
-              <td>{p.stock}</td>
+              <td className={p.stock < 5 ? "stock-bajo" : ""}>{p.stock}</td>
               <td>
                 <button onClick={() => editar(p)}>Editar</button>
                 {usuario.rol === "admin" && (

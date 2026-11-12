@@ -44,6 +44,7 @@ function Login({ onLogin }) {
   return (
     <div className="login">
       <form className="tarjeta" onSubmit={enviar}>
+        <h1 className="logo">Ecommerce</h1>
         <h2>{esRegistro ? "Crear cuenta" : "Iniciar sesión"}</h2>
 
         {mensaje && <p className={esError ? "mensaje error" : "mensaje ok"}>{mensaje}</p>}

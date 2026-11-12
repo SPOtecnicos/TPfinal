@@ -67,7 +67,9 @@ function Inicio() {
               <td>{p.id}</td>
               <td>{formatoFecha(p.fecha)}</td>
               <td>{p.cliente}</td>
-              <td>{p.estado}</td>
+              <td>
+                <span className={"estado " + p.estado}>{p.estado}</span>
+              </td>
               <td>{formatoPesos(p.total)}</td>
             </tr>
           ))}

@@ -115,6 +115,9 @@ function Pedidos({ usuario }) {
         <div className="detalle">
           <h3>Detalle del pedido N° {detalle.id}</h3>
           <p>Cliente: {detalle.cliente}</p>
+          <p>
+            Estado: <span className={"estado " + detalle.estado}>{detalle.estado}</span>
+          </p>
           <table>
             <thead>
               <tr>
